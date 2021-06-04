@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float jumpSpeed = 8.0F;   //ジャンプ力
     public float gravity = 20.0F;    //重力の大きさ
     private CharacterController controller;//キャラクターコントローラー
+    Animator anim;
     private Vector3 moveDirection,gravityDirection, cameraForward;
     private GameObject Player_t;
     private float x, z;//入力値
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        anim = GetComponentInChildren<Animator>();
         Player_t = transform.Find("2021_Leg_Samplev0").gameObject;
         Cursor.lockState = CursorLockMode.Locked;//カーソルロック
         Cursor.visible = false;//カーソル非表示
@@ -33,13 +35,14 @@ public class Player : MonoBehaviour
     void run()
     {
         //Debug.Log(moveDirection);
+        if (x != 0 || z != 0) anim.SetBool("walk", true);
+        else anim.SetBool("walk", false);
         if (controller.isGrounded)//地面に接しているとき
         {
             moveDirection = new Vector3(x, 0, z);
             cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;// カメラの方向から、X-Z平面の単位ベクトルを取得
             moveDirection = cameraForward * z + Camera.main.transform.right * x;// 方向キーの入力値とカメラの向きから、移動方向を決定
             moveDirection = transform.TransformDirection(moveDirection);
-            
             moveDirection *= speed;
             if (Input.GetButton("Jump"))moveDirection.y = jumpSpeed;
         }
