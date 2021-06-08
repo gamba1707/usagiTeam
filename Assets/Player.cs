@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     private float x, z;//入力値
     float doubletap,tapcount;
     bool dashbool;
+    [SerializeField] CinemachineVirtualCamera vcamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class Player : MonoBehaviour
         Player_t = transform.Find("2021_Leg_Samplev0").gameObject;
         Cursor.lockState = CursorLockMode.Locked;//カーソルロック
         Cursor.visible = false;//カーソル非表示
+        vcamera.m_Lens.FieldOfView = 65;
     }
 
     // Update is called once per frame
@@ -31,6 +34,7 @@ public class Player : MonoBehaviour
         z = Input.GetAxis("Vertical");//上下矢印キーの値(-1.0~1.0)
         dash();
         run();
+        pause();
     }
     void run()
     {
@@ -84,6 +88,7 @@ public class Player : MonoBehaviour
             {
                 dashbool = true;
                 speed = 10;
+                vcamera.m_Lens.FieldOfView = 70;
                 Debug.Log("yeah");
             }
             else
@@ -91,9 +96,23 @@ public class Player : MonoBehaviour
                 tapcount = 0;
                 doubletap = 0;
                 speed = 5;
+                vcamera.m_Lens.FieldOfView = 65;
                 dashbool = false;
             }
         }
         
+    }
+
+    void pause()
+    {
+        
+        if(ButtonManager.pause==true&& Input.GetButtonDown("tab"))
+        {
+            ButtonManager.pause = false;
+        }
+        else if (Input.GetButtonDown("tab"))
+        {
+            ButtonManager.pause = true;
+        }
     }
 }
