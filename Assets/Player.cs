@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
         Player_t = transform.Find("2021_Leg_Samplev0").gameObject;
         Cursor.lockState = CursorLockMode.Locked;//カーソルロック
         Cursor.visible = false;//カーソル非表示
-        vcamera.m_Lens.FieldOfView = 65;
+        vcamera.m_Lens.FieldOfView = 70;
     }
 
     // Update is called once per frame
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
             {
                 dashbool = true;
                 speed = 10;
-                vcamera.m_Lens.FieldOfView = 70;
+                vcamera.m_Lens.FieldOfView = 75;
                 Debug.Log("yeah");
             }
             else
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
                 tapcount = 0;
                 doubletap = 0;
                 speed = 5;
-                vcamera.m_Lens.FieldOfView = 65;
+                vcamera.m_Lens.FieldOfView = 70;
                 dashbool = false;
             }
         }
