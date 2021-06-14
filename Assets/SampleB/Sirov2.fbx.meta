@@ -8,12 +8,52 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Item2
-    second: {fileID: 2100000, guid: aff3cc5d2d856ac42915ae3377c5535e, type: 2}
+    second: {fileID: 2100000, guid: aba708c387124ef4a8c02e487b865131, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Load1
     second: {fileID: 2100000, guid: baf894285538dfd4e96cee7dcedb2c3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 1a81da5490377d64db3bfeec9f190910, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 1a81da5490377d64db3bfeec9f190910, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: aff3cc5d2d856ac42915ae3377c5535e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.008
+    second: {fileID: 2100000, guid: 1a81da5490377d64db3bfeec9f190910, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 1a81da5490377d64db3bfeec9f190910, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof1.001
+    second: {fileID: 2100000, guid: aff3cc5d2d856ac42915ae3377c5535e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof1.008
+    second: {fileID: 2100000, guid: aff3cc5d2d856ac42915ae3377c5535e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof1.009
+    second: {fileID: 2100000, guid: aff3cc5d2d856ac42915ae3377c5535e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
