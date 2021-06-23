@@ -32,8 +32,12 @@ public class Player : MonoBehaviour
     {
         x = Input.GetAxis("Horizontal");    //左右矢印キーの値(-1.0~1.0)
         z = Input.GetAxis("Vertical");//上下矢印キーの値(-1.0~1.0)
-        dash();
-        run();
+        if (!ButtonManager.pause)
+        {
+            dash();
+            run();
+        }
+        
         pause();
     }
     void run()
@@ -105,14 +109,17 @@ public class Player : MonoBehaviour
 
     void pause()
     {
-        
-        if(ButtonManager.pause==true&& Input.GetButtonDown("tab"))
+        if (ButtonManager.pause==true&& Input.GetButtonDown("tab"))//pause解除
         {
             ButtonManager.pause = false;
         }
-        else if (Input.GetButtonDown("tab"))
+        else if (Input.GetButtonDown("tab"))//ポーズ画面
         {
             ButtonManager.pause = true;
         }
+
+        //カメラ設定
+        if(ButtonManager.pause == true) vcamera.enabled = false;
+        else vcamera.enabled = true;
     }
 }
