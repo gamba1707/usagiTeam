@@ -9,7 +9,7 @@ public class ButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pause = false;
+        //pause = false;
     }
 
     // Update is called once per frame
@@ -25,7 +25,6 @@ public class ButtonManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;//カーソル解除
         Cursor.visible = true;//カーソル表示
         pausePanel.SetActive(true);
-        Time.timeScale = 0f;
     }
     public void Offpause()//ポーズ画面を消す
     {
@@ -33,6 +32,5 @@ public class ButtonManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//カーソルロック
         Cursor.visible = false;//カーソル非表示
         pausePanel.SetActive(false);
-        Time.timeScale = 1f;
     }
 }
