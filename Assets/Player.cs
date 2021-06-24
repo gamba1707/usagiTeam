@@ -103,6 +103,14 @@ public class Player : MonoBehaviour
                 vcamera.m_Lens.FieldOfView = 70;
                 dashbool = false;
             }
+            if (doubletap < 2)
+            {
+                tapcount = 0;
+                doubletap = 0;
+                speed = 5;
+                vcamera.m_Lens.FieldOfView = 70;
+                dashbool = false;
+            }
         }
         
     }

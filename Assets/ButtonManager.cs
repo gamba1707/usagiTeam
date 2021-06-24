@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,5 +33,12 @@ public class ButtonManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//カーソルロック
         Cursor.visible = false;//カーソル非表示
         pausePanel.SetActive(false);
+    }
+
+    public void OnShot()
+    {
+        DateTime dt = DateTime.Now;
+        ScreenCapture.CaptureScreenshot("Assets/"+ dt.ToString("yyyy-MM-dd_HH-mm-ss")+".png");
+        Debug.Log("SHOT");
     }
 }
