@@ -18,8 +18,22 @@ public class GetItem : MonoBehaviour
     }
 
     // Update is called once per frame
-    
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "KeyItem")
+        {
+            Debug.Log("Itemを認識");
+            VewObj[other.gameObject.GetComponent<Item>().ItemNumber].SetActive(true);
+            GetItemnum++;
+            if (GetItemnum >= 3)
+            {
+                Destroy(HideWall);
+            }
+            Destroy(other.gameObject);
+
+        }
+    }
+    /*public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "KeyItem") {
             Debug.Log("Itemを認識");
@@ -32,4 +46,5 @@ public class GetItem : MonoBehaviour
             
         }
     }
+    */
 }
