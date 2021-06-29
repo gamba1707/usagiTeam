@@ -41,4 +41,5 @@ public class ButtonManager : MonoBehaviour
         ScreenCapture.CaptureScreenshot("Assets/"+ dt.ToString("yyyy-MM-dd_HH-mm-ss")+".png");
         Debug.Log("SHOT");
     }
+
 }

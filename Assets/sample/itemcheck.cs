@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class itemcheck : MonoBehaviour
 {
-    public GameObject[] itemobj;
+    public GameObject[] itemobj,itembutton,dummybutton;
     string check;
-    System.Text.StringBuilder sb;
+    //System.Text.StringBuilder sb;
     // Start is called before the first frame update
     void Start()
     {
-        check = PlayerPrefs.GetString("objcheck","nnnnnnnnnn");
-        sb = new System.Text.StringBuilder(check);
+        check = PlayerPrefs.GetString("objcheck","nnnnnnnnnnnnn");
+        //sb = new System.Text.StringBuilder(check);
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnEnable()//何を取得済みか判定
     {
-        for (int i=0;i<12;i++)
+        for (int i=0;i<itemobj.Length;i++)
         {
-            if (itemobj[i].activeInHierarchy) sb.Replace("n","y",i,1);
-            Debug.Log(sb.ToString());
+            if (itemobj[i].activeInHierarchy)
+            {
+                //sb.Replace("n", "y", i, 1);
+                itembutton[i].SetActive(true);
+                dummybutton[i].SetActive(false);
+            }
+            //Debug.Log(sb.ToString());
         }
     }
 }
