@@ -26,4 +26,8 @@ public class OP : MonoBehaviour
     public void StartGame() {
         SceneManager.LoadScene("stage");
     }
+    public void EndGame()
+    {
+        SceneManager.LoadScene("OPandED");
+    }
 }
