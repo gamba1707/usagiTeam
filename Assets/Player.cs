@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     float doubletap,tapcount;
     bool dashbool;
     [SerializeField] CinemachineVirtualCamera vcamera;
+    public static float gamesec;//ゲーム経過時間
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer();
+        gamesec += Time.deltaTime;
         x = Input.GetAxis("Horizontal");    //左右矢印キーの値(-1.0~1.0)
         z = Input.GetAxis("Vertical");//上下矢印キーの値(-1.0~1.0)
         if (!ButtonManager.pause)
@@ -37,9 +40,9 @@ public class Player : MonoBehaviour
             dash();
             run();
         }
-        
         pause();
     }
+
     void run()
     {
         //Debug.Log(moveDirection);
@@ -67,7 +70,7 @@ public class Player : MonoBehaviour
     }
     void dash()
     {
-        Debug.Log(tapcount + "," + doubletap);
+        //Debug.Log(tapcount + "," + doubletap);
         //Debug.Log("wcount:"+dashbool);
         if (doubletap == 1 && tapcount > 0.3f)
         {
@@ -129,5 +132,10 @@ public class Player : MonoBehaviour
         //カメラ設定
         if(ButtonManager.pause == true) vcamera.enabled = false;
         else vcamera.enabled = true;
+    }
+
+    void timer()
+    {
+
     }
 }
