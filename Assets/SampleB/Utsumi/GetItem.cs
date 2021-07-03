@@ -6,7 +6,7 @@ public class GetItem : MonoBehaviour
 {
     
     public GameObject[] VewObj;
-    public int GetItemnum;
+    public static int GetItemnum;
     public GameObject HideWall;
     // Start is called before the first frame update
     void Start()
