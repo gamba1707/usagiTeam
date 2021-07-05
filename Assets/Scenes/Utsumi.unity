@@ -352,7 +352,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8870222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.11, y: -57.12, z: -235.98}
+  m_LocalPosition: {x: 90.55, y: -34.309998, z: -237.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5097,6 +5097,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986808911226691060, guid: 3e5a06cb7f594d442adf282eb4a4e380,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 36.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8986808911226691060, guid: 3e5a06cb7f594d442adf282eb4a4e380,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.45
       objectReference: {fileID: 0}
     - target: {fileID: 9073521105615009797, guid: 3e5a06cb7f594d442adf282eb4a4e380,
         type: 3}
@@ -10296,6 +10306,7 @@ MonoBehaviour:
   - {fileID: 266755805}
   - {fileID: 194481500}
   HideWall: {fileID: 52492241}
+  ch: {fileID: 0}
 --- !u!114 &450480265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15164,7 +15175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642249157}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.11, y: -57.12, z: -235.98}
+  m_LocalPosition: {x: 90.55, y: -34.309998, z: -237.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1481389343}
@@ -26511,6 +26522,7 @@ MonoBehaviour:
   - {fileID: 266755805}
   - {fileID: 194481500}
   HideWall: {fileID: 52492241}
+  ch: {fileID: 0}
 --- !u!1 &1134723373 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6967565719392785201, guid: 3e5a06cb7f594d442adf282eb4a4e380,
@@ -44505,7 +44517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708928311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.11, y: -57.82, z: -235.98}
+  m_LocalPosition: {x: 90.55, y: -35.01, z: -237.23}
   m_LocalScale: {x: 1, y: 1.7, z: 1}
   m_Children:
   - {fileID: 637372366}
@@ -44526,19 +44538,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VewObj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  HideWall: {fileID: 0}
+  - {fileID: 203768002}
+  - {fileID: 473070138}
+  - {fileID: 781133577}
+  - {fileID: 81869086}
+  - {fileID: 1238470608}
+  - {fileID: 1958717991}
+  - {fileID: 1819544612}
+  - {fileID: 679455094}
+  - {fileID: 152355511}
+  - {fileID: 1296590177}
+  - {fileID: 266755805}
+  - {fileID: 194481500}
+  HideWall: {fileID: 52492241}
+  ch: {fileID: 0}
 --- !u!114 &1708928314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50555,6 +50568,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bortv2
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3a8cbbd2b0d560044bb6dbacfff3ad49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -674848193068526365, guid: 3a8cbbd2b0d560044bb6dbacfff3ad49,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1041392021063003478, guid: 3a8cbbd2b0d560044bb6dbacfff3ad49,
         type: 3}
       propertyPath: m_Name
@@ -51116,7 +51139,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1644508216}
   m_HandleRect: {fileID: 1644508215}
   m_Direction: 0
-  m_Value: 0.499999
+  m_Value: 0.49999142
   m_Size: 0.32419506
   m_NumberOfSteps: 0
   m_OnValueChanged:
