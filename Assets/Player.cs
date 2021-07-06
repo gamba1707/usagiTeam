@@ -130,7 +130,8 @@ public class Player : MonoBehaviour
         }
 
         //カメラ設定
-        if(ButtonManager.pause == true) vcamera.enabled = false;
+        if (smartphone.camApp) vcamera.enabled = true;
+        else if(ButtonManager.pause) vcamera.enabled = false;
         else vcamera.enabled = true;
     }
 
