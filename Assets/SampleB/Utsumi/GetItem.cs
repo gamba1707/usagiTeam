@@ -6,8 +6,9 @@ public class GetItem : MonoBehaviour
 {
     
     public GameObject[] VewObj;
-    public int GetItemnum;
+    public static int GetItemnum;
     public GameObject HideWall;
+    public ItemCh ch;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class GetItem : MonoBehaviour
             VewObj[i].SetActive(false);
         }
         GetItemnum = 0;
+        ch = GetComponent<ItemCh>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class GetItem : MonoBehaviour
             Debug.Log("Itemを認識");
             VewObj[other.gameObject.GetComponent<Item>().ItemNumber].SetActive(true);
             GetItemnum++;
+            ItemCh.ch[other.gameObject.GetComponent<Item>().ItemNumber] = true;
             if (GetItemnum >= 3)
             {
                 Destroy(HideWall);
