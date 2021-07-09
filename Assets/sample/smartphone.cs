@@ -26,7 +26,7 @@ public class smartphone : MonoBehaviour
     {
         scroll = Input.GetAxis("Mouse ScrollWheel");
         time = TimeSpan.FromSeconds(Player.gamesec);
-        Debug.Log("経過時間:"+ time.ToString(@"hh\:mm\:ss"));
+        //Debug.Log("経過時間:"+ time.ToString(@"hh\:mm\:ss"));
         ueTimeText.text = time.ToString(@"hh\:mm\:ss");
         TimeText.text = time.ToString(@"hh\:mm") + "<br><size=30> "+ DateTime.Now.ToString("MM月dd日")+"("+ ("日月火水木金土").Substring(int.Parse(DateTime.Now.DayOfWeek.ToString("d")), 1)+")";
         if (Input.GetMouseButtonDown(1)) OnHomeButton();//右クリックをしたらホームに戻る
