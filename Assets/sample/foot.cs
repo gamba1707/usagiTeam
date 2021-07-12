@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class foot : MonoBehaviour
 {
@@ -9,12 +10,17 @@ public class foot : MonoBehaviour
     [SerializeField] AudioClip[] clips;
     private AudioSource audiosource;
     private Terrain t;
+
     private TerrainData tData;
     private int groundIndex = 0;
+    Dictionary<string, int> tagToIndex = new Dictionary<string, int>();
+    string[] terrainLayerToTag;
     // Start is called before the first frame update
     void Start()
     {
         audiosource = GetComponent<AudioSource>();
+        t = Terrain.activeTerrain;
+        tData = t.terrainData;
     }
 
     // Update is called once per frame
@@ -33,15 +39,28 @@ public class foot : MonoBehaviour
             case "FULLO.001 (Instance)":
                 audiosource.PlayOneShot(clips[1]);//nomal
                 break;
+            case "No Name (Instance)":
+                audiosource.PlayOneShot(clips[1]);//nomal
+                break;
+            case "Terrain":
+                audiosource.PlayOneShot(clips[2]);//kusa
+                break;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("着地！");
+        Footon();
     }
 
     private void OnTriggerStay(Collider other)
     {
+
         Debug.Log(other.gameObject.name);
-        if (other.gameObject.name.Equals("Trrain"))
+        if (other.gameObject.name.Equals("Terrain"))
         {
-            // Terrainから現在地のAlphamapを取得する
+            footname = "Terrain";
             Vector3 position = transform.position - t.transform.position;
             int offsetX = (int)(tData.alphamapWidth * position.x / tData.size.x);
             int offsetZ = (int)(tData.alphamapHeight * position.z / tData.size.z);
@@ -50,9 +69,7 @@ public class foot : MonoBehaviour
             // Alphamap中で成分が最大のTerrainLayerを探す
             float[] weights = alphamaps.Cast<float>().ToArray();
             int terrainLayer = System.Array.IndexOf(weights, weights.Max());
-            groundIndex = tagToIndex[terrainLayerToTag[terrainLayer]];
-
-            
+            Debug.Log(terrainLayer.ToString());
         }
         else footmaterial = other.gameObject.GetComponent<Renderer>().material;
 
