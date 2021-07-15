@@ -7,7 +7,7 @@ public class ButtonManager : MonoBehaviour
 {
     public GameObject pausePanel;
     public static bool pause;
-    public GameObject lightobj;
+    public GameObject lightobj,fpsText;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +46,12 @@ public class ButtonManager : MonoBehaviour
         DateTime dt = DateTime.Now;
         ScreenCapture.CaptureScreenshot("Assets/"+ dt.ToString("yyyy-MM-dd_HH-mm-ss")+".png");
         Debug.Log("SHOT");
+    }
+
+    public void Onfps()
+    {
+        if (fpsText.activeInHierarchy) fpsText.SetActive(false);
+        else fpsText.SetActive(true);
     }
 
 }
