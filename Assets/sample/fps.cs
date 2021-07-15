@@ -8,7 +8,7 @@ public class fps : MonoBehaviour
     private float fpscount;
     TextMeshProUGUI fpsText;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         fpsText = GetComponent<TextMeshProUGUI>();
         StartCoroutine("waitone");

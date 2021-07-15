@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class smartphone : MonoBehaviour
 {
-    [SerializeField] GameObject home, Item,CamAppView,zoomslider,Map;
+    [SerializeField] GameObject home, Item,CamAppView,zoomslider,MapApp,InfoApp;
     private Slider slider;
     [SerializeField] Camera came;
     public TextMeshProUGUI TimeText,ueTimeText;
@@ -55,7 +55,8 @@ public class smartphone : MonoBehaviour
         Item.SetActive(false);
         CamAppView.SetActive(false);
         camApp = false;
-        Map.SetActive(false);
+        MapApp.SetActive(false);
+        InfoApp.SetActive(false);
     }
 
     public void OnCamApp()
@@ -68,6 +69,11 @@ public class smartphone : MonoBehaviour
 
     public void OnMapApp()
     {
-        Map.SetActive(true);
+        MapApp.SetActive(true);
+    }
+
+    public void OnInfoApp()
+    {
+        InfoApp.SetActive(true);
     }
 }
