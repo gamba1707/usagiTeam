@@ -46,6 +46,9 @@ public class foot : MonoBehaviour
                 case "Wood1_Dark.008 (Instance)":
                     audiosource.PlayOneShot(clips[0]);//wood
                     break;
+                case "FULLO.003 (Instance)":
+                    audiosource.PlayOneShot(clips[0]);//wood
+                    break;
                 case "FULLO.001 (Instance)":
                     audiosource.PlayOneShot(clips[1]);//nomal
                     break;
@@ -57,6 +60,9 @@ public class foot : MonoBehaviour
                     break;
                 case "Material.018 (Instance)":
                     audiosource.PlayOneShot(clips[3]);//tatami
+                    break;
+                default:
+                    audiosource.PlayOneShot(clips[1]);//nomal
                     break;
             }
         }

@@ -7,6 +7,7 @@ public class ButtonManager : MonoBehaviour
 {
     public GameObject pausePanel;
     public static bool pause;
+    public GameObject lightobj;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,11 @@ public class ButtonManager : MonoBehaviour
     {
         if (pause) Onpause();
         else Offpause();
+        if(Input.GetButtonDown("lightbutton"))
+        {
+            if (lightobj.activeInHierarchy) lightobj.SetActive(false);
+            else lightobj.SetActive(true);
+        }
     }
 
     public void Onpause()//ポーズ画面を出す
