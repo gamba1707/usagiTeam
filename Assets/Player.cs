@@ -35,7 +35,6 @@ public class Player : MonoBehaviour
         gamesec += Time.deltaTime;
         x = Input.GetAxis("Horizontal");    //左右矢印キーの値(-1.0~1.0)
         z = Input.GetAxis("Vertical");//上下矢印キーの値(-1.0~1.0)
-        transform
         if (!ButtonManager.pause)
         {
             dash();
