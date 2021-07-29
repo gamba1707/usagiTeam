@@ -65,6 +65,8 @@ public class smartphone : MonoBehaviour
         Cursor.visible = false;//カーソル非表示
         CamAppView.SetActive(true);
         camApp = true;
+        Cursor.lockState = CursorLockMode.Locked;//カーソルロック
+        Cursor.visible = false;//カーソル非表示
     }
 
     public void OnMapApp()
