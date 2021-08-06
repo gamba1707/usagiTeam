@@ -83,4 +83,9 @@ public class smartphone : MonoBehaviour
     {
         naichilab.UnityRoomTweet.Tweet("tgc2021_hitokiyojima", "ここに文字を入力", "TGC", "人拒島");
     }
+
+    public void save()
+    {
+
+    }
 }
