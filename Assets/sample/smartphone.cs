@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 public class smartphone : MonoBehaviour
 {
-    [SerializeField] GameObject home, Item,CamAppView,zoomslider,MapApp,InfoApp;
+    [SerializeField] GameObject home, Item, CamAppView, zoomslider, MapApp, InfoApp;
     private Slider slider;
     [SerializeField] Camera came;
-    public TextMeshProUGUI TimeText,ueTimeText;
+    public TextMeshProUGUI TimeText, ueTimeText;
     float scroll;
     public static bool camApp;
     TimeSpan time;
@@ -28,16 +28,16 @@ public class smartphone : MonoBehaviour
         time = TimeSpan.FromSeconds(Player.gamesec);
         //Debug.Log("経過時間:"+ time.ToString(@"hh\:mm\:ss"));
         ueTimeText.text = time.ToString(@"hh\:mm\:ss");
-        TimeText.text = time.ToString(@"hh\:mm") + "<br><size=30> "+ DateTime.Now.ToString("MM月dd日")+"("+ ("日月火水木金土").Substring(int.Parse(DateTime.Now.DayOfWeek.ToString("d")), 1)+")";
+        TimeText.text = time.ToString(@"hh\:mm") + "<br><size=30> " + DateTime.Now.ToString("MM月dd日") + "(" + ("日月火水木金土").Substring(int.Parse(DateTime.Now.DayOfWeek.ToString("d")), 1) + ")";
         if (Input.GetMouseButtonDown(1)) OnHomeButton();//右クリックをしたらホームに戻る
-        if(camApp)Cam();
+        if (camApp) Cam();
     }
 
     void Cam()
     {
         Cursor.lockState = CursorLockMode.Locked;//カーソルロック
         Cursor.visible = false;//カーソル非表示
-        slider.value-= (scroll*3f);
+        slider.value -= (scroll * 3f);
         came.fieldOfView = slider.value;
     }
 
@@ -87,5 +87,11 @@ public class smartphone : MonoBehaviour
     public void save()
     {
 
+    }
+
+    [System.Serializable]
+    public class PlayerData{
+        public float playtime;
+        public bool[] item;
     }
 }

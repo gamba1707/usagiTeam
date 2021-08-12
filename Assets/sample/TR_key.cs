@@ -1,14 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TR_key : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public TextMeshProUGUI Mes;
+    public GameObject bortselect;
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag.Equals("Player"))
+        
+        if (other.gameObject.tag.Equals("Player"))
         {
-
+            if (gameObject.name.Equals("Key"))
+            {
+                StartCoroutine("key");
+                gameObject.GetComponent<MeshRenderer>().enabled = false;
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+            }
+            else
+            {
+                bortselect.SetActive(true);
+            }
+            
         }
+
+    }
+
+    IEnumerator key()
+    {
+        Mes.text = "さ";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっ";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさ";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着き";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着き場";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着き場に";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着き場に行";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着き場に行こ";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着き場に行こう";
+        yield return new WaitForSeconds(0.2f);
+        Mes.text = "さっさと船着き場に行こう。";
+        yield return new WaitForSeconds(1.5f);
+        Mes.text = "";
     }
 }
