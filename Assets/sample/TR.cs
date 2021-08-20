@@ -40,11 +40,5 @@ public class TR : MonoBehaviour
         Mes.text = "すまないが取ってきてはくれないか。";
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("Player"))
-        {
-            
-        }
-    }
+    
 }

@@ -40,7 +40,7 @@ public class OP : MonoBehaviour
     }
     IEnumerator LoadStage()
     {
-        async = SceneManager.LoadSceneAsync("stage");
+        async = SceneManager.LoadSceneAsync("TR");
         //　読み込みが終わるまで進捗状況をスライダーの値に反映させる
         while (!async.isDone)
         {
