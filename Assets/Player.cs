@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//カーソルロック
         Cursor.visible = false;//カーソル非表示
         vcamera.m_Lens.FieldOfView = 70;
+        Debug.Log(DateTime.Now.ToString("yyyy年MM月dd日") + "(" + ("日月火水木金土").Substring(int.Parse(DateTime.Now.DayOfWeek.ToString("d")), 1) + ")");
     }
 
     // Update is called once per frame

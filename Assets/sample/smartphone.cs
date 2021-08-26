@@ -86,12 +86,9 @@ public class smartphone : MonoBehaviour
 
     public void save()
     {
-
+        PlayerPrefs.SetFloat("playtime",Player.gamesec);
+        PlayerPrefs.SetString("", DateTime.Now.Year+ DateTime.Now.ToString("MM月dd日") + "(" + ("日月火水木金土").Substring(int.Parse(DateTime.Now.DayOfWeek.ToString("d")), 1) + ")");
     }
 
-    [System.Serializable]
-    public class PlayerData{
-        public float playtime;
-        public bool[] item;
-    }
+    
 }
